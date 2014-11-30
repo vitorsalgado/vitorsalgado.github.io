@@ -17,7 +17,7 @@ html, body {
 
 body {
 	font-family: 'Open Sans', sans-serif;
-	background-color: #222;
+	background-color: #1A1B1F;
 	color: #EBEFF0;
 }
 
@@ -46,7 +46,10 @@ section {
 }
 
 .container {
-	background: #222;
+	background-image: url(/static/images/header-background.png);
+	background-repeat: repeat;
+	background-position: 0 0,0 0,0 0;
+	background-color: #81A9C2;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -76,6 +79,8 @@ h1 {
 
 h2 {
 	font-size: 22px;
+	color: #535353;
+	font-weight: bold;
 }
 
 nav {
@@ -89,18 +94,18 @@ nav {
 		display: inline-block;
 		margin: 7px;
 		text-transform: uppercase;
-		border: 1px solid #FBE3C4;
+		border: 1px dashed #fff;
 	}
 
 		nav a:hover {
-			background: #FBE3C4;
-			color: #291A03;
+			background: #535353;
+			color: #fff;
 		}
 
 footer {
-	position: absolute;
-	bottom: 0;
-	text-align: center;
-	width: 100%;
-	display: none;
+	margin-top: 25px;
 }
+
+	footer ul {
+		margin-bottom: 15px;
+	}
