@@ -49,11 +49,13 @@ a, a:visited, a:active {
 }
 
 .about-header {
+	border-bottom: 1px solid rgba(0,0,0,0.15);
 	box-shadow: 0 1px rgba(0, 0, 0, 0.1);
 	margin-bottom: 25px;
 }
 
 .about-header,
+.about-footer,
 .container {
 	background-image: url(/static/images/header-background.png);
 	background-repeat: repeat;
@@ -74,8 +76,7 @@ a, a:visited, a:active {
 
 .profile-section {
 	padding: 10px 0 20px;
-				color: #535353;
-
+	color: #535353;
 }
 
 	.profile-section header {
@@ -95,9 +96,9 @@ a, a:visited, a:active {
 		line-height: 30px;
 	}
 
-	.profile-section li{
+	.profile-section li {
 		list-style-type: circle;
-		list-style:circle;
+		list-style: circle;
 	}
 
 .wrapper {
@@ -149,10 +150,15 @@ nav {
 			color: #fff;
 		}
 
-footer {
+.card-footer {
 	margin-top: 25px;
 }
 
-	footer ul {
+	.card-footer ul {
 		margin-bottom: 15px;
 	}
+
+.about-footer {
+	border-top: 1px solid rgba(0,0,0,0.15);
+	padding: 20px 0;
+}
