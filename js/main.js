@@ -69,9 +69,11 @@ jQuery(document).ready(function($){
                 $currentSection = $(this);
             }
 
-            var id = $currentSection.attr('id');
-            $('a').removeClass('active');
-            $("[href=#"+id+"]").addClass('active');
+            if($currentSection != null && typeof $currentSection != 'undefined') {
+                var id = $currentSection.attr('id');
+                $('a').removeClass('active');
+                $("[href=#" + id + "]").addClass('active');
+            }
         })
 
     });
