@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /about
-Disallow: /about/
-Disallow: /about/index.html
-Sitemap: http://vitorsalgado.github.io/sitemap.xml
