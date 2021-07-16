@@ -1,0 +1,10 @@
+configs/
+dist/
+tools/
+build/
+docs/
+coverage/
+
+cmd/create-react-ts-web-starter/
+
+*.config.js
