@@ -25,7 +25,7 @@ module.exports = {
 
   paths: {
     sourcesRoot: resolvePath('src'),
-    buildDestination: resolvePath('dist'),
+    buildDestination: resolvePath('docs'),
     indexHTML: resolvePath('./src/index.html'),
     applicationEntrypoint: resolvePath('./src/index.tsx')
   },

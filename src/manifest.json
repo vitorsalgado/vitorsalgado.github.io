@@ -1,9 +1,9 @@
 {
-  "short_name": "React Web Starter",
-  "name": "React Web Starter",
+  "short_name": "Vitor Hugo Salgado",
+  "name": "Vitor Hugo Salgado - Open Source Profile",
   "start_url": "index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#20133A",
   "background_color": "#ffffff",
   "serviceworker": {
     "src": "sw.js"

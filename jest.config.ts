@@ -9,6 +9,8 @@ const shared: JestConfig.InitialOptions = {
   collectCoverage: false,
   restoreMocks: true,
 
+  setupFilesAfterEnv: [Path.resolve('./src/test-setup.config.ts')],
+
   transform: { '^.+\\.tsx?$': 'ts-jest' },
   globals: {
     'ts-jest': {
@@ -24,7 +26,7 @@ const config: JestConfig.InitialOptions = {
       rootDir: './src',
       testEnvironment: 'jsdom',
       moduleNameMapper: {
-        '\\.(jpg|jpeg|png|gif|ico|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': Path.resolve(
+        '\\.(jpg|jpeg|png|gif|ico|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|txt|pdf)$': Path.resolve(
           './test/setup/mocks/files/index.js'
         ),
         '\\.(css|less|scss)$': Path.resolve('./test/setup/mocks/styles/index.js'),

@@ -24,6 +24,8 @@ module.exports = {
     }
   },
 
+  ignoreWarnings: [/Failed to parse source map/],
+
   module: {
     strictExportPresence: true,
     rules: [
@@ -46,7 +48,7 @@ module.exports = {
       {
         test: /\.(js|jsx|mjs)$/,
         include: Config.paths.sourcesRoot,
-        exclude: [/node_modules/, /node_modules/, /jest.config.js/],
+        exclude: /node_modules|__snaphots__|jest.config.js/,
         use: { loader: 'babel-loader', options: { cacheDirectory: true, highlightCode: true } }
       },
       {
@@ -61,7 +63,8 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[name]-[local]--[contenthash:base64:5]'
+                localIdentName: '[name]-[local]--[contenthash:base64:5]',
+                exportLocalsConvention: 'camelCase'
               }
             }
           },
@@ -85,7 +88,7 @@ module.exports = {
         type: 'asset/resource'
       },
       {
-        test: /\.(jpg|png|gif)$/,
+        test: /\.(jpg|png|gif|pdf|txt)$/,
         exclude: /\.(js|jsx|mjs|ts|tsx|html|json|xml|csv|snap|(sa|sc|c)ss)$/,
         type: 'asset/resource',
         generator: {

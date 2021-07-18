@@ -8,3 +8,5 @@ coverage/
 cmd/create-react-ts-web-starter/
 
 *.config.js
+
+*.d.ts

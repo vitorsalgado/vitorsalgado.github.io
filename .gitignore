@@ -83,4 +83,5 @@ typings/
 # project
 dist/
 .stylelintcache/
-tools/dev/
+tools/dev
+gh_repos_data.json
