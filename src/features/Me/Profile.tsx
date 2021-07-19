@@ -3,7 +3,6 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import { Translations } from '@app/shared/locales/translations'
-import MadeIn from '@app/features/Me/MadeIn'
 import Nav from '@app/features/Me/Nav'
 import ProfileAvatar from './avatar.jpg'
 import { MediaQueries } from '@app/app-vars'
@@ -64,7 +63,6 @@ export default function Profile(): JSX.Element {
       </AvatarWrapper>
       <Nav />
       <More />
-      <MadeIn />
     </Wrapper>
   )
 }
