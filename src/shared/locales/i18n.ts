@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next'
 import BrowserLanguageDetector from 'i18next-browser-languagedetector'
 import En from './en/translations.en.json'
 import { convertLanguageJsonToObject } from '@app/shared/locales/translations'
-import Config from '@app/shared//config'
+import Config from '@app/shared/config'
 
 export const TranslationsJSON = {
   en: {
