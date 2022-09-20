@@ -14,8 +14,9 @@ CONTEXT := $$(pwd)
 help:
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
+.PHONY: start
 start: ## Start Dev Server with Hot Reload
-	@yarn start
+	@npm start
 
 .PHONY: dist
 dist: ## Server dist/ with a nginx docker. Use -e NGINX_PORT parameter to change Nginx port. Defaults to 3000.
