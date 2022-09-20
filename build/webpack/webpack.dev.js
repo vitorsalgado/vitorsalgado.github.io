@@ -19,13 +19,18 @@ module.exports = Merge(Base, {
   bail: false,
 
   devServer: {
-    contentBase: paths.buildDestination,
-    hot: true,
-    inline: true,
-    clientLogLevel: 'none',
-    host: Config.devServer.host,
-    port: Config.devServer.port,
+    hot: false,
+    port: 3000,
+    host: '0.0.0.0',
     historyApiFallback: true,
+    client: {
+      overlay: {
+        errors: false,
+        warnings: false,
+      },
+      progress: false,
+    },
+    open: false,
   },
 
   watchOptions: {

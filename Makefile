@@ -17,10 +17,15 @@ help:
 start: ## Start Dev Server with Hot Reload
 	@yarn start
 
+.PHONY: dist
+dist: ## Server dist/ with a nginx docker. Use -e NGINX_PORT parameter to change Nginx port. Defaults to 3000.
+	@docker run -it --rm \
+		-p $(NGINX_PORT):80 \
+		--name web \
+		-v $(CONTEXT)/docs:/usr/share/nginx/html -v $(CONTEXT)/config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro \
+		nginx
 
-# Dev Environment Utilities
-# ---
-
+.PHONY: nvm
 nvm: ## Install Node.js version described on .nvmrc.
 	[ -s "$$HOME/.nvm/nvm.sh" ] && . "$$HOME/.nvm/nvm.sh" && \
 	nvm install $$(cat .nvmrc) && \

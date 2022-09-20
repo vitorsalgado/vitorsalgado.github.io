@@ -4,7 +4,7 @@ const Pkg = require('./package.json')
 const Configs = require('./config')
 
 module.exports = {
-  presets: ['@babel/preset-env', '@babel/preset-react'],
+  presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
   plugins: [
     '@babel/transform-runtime',
     ['babel-plugin-styled-components', { displayName: !Configs.isProduction, namespace: Pkg.name }],

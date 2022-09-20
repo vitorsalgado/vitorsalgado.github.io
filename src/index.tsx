@@ -1,7 +1,7 @@
 import 'react-app-polyfill/stable'
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import App from '@app/app'
 import initWebVitals from '@app/shared/utils/metrics/web-vitals'
@@ -11,30 +11,27 @@ import { configureAppStore } from '@app/shared/store'
 import { HelmetProvider } from 'react-helmet-async'
 
 const store = configureAppStore()
-const ROOT_CONTAINER = document.getElementById('root') as HTMLElement
+const container = document.getElementById('root') as HTMLElement
+const root = createRoot(container)
 
-const render = (): void => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <HelmetProvider>
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
-      </HelmetProvider>
-    </Provider>,
-    ROOT_CONTAINER,
-  )
-}
+root.render(
+  <Provider store={store}>
+    <HelmetProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </HelmetProvider>
+  </Provider>,
+)
 
-render()
 registerWindowErrorEvents()
 registerServiceWorker()
 initWebVitals()
 
 if ((module as any).hot) {
+  // eslint-disable-next-line @typescript-eslint/no-extra-semi
   ;(module as any).hot.accept('./app', () => {
-    ReactDOM.unmountComponentAtNode(ROOT_CONTAINER)
-    render()
+    root.unmount()
   })
   ;(module as any).hot.accept(['./shared/locales/i18n'], () => {
     // ...

@@ -3,7 +3,7 @@ import './favicon.ico'
 import './shared/locales/i18n'
 
 import * as React from 'react'
-import { HashRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import { Container } from './components/Container'
 import Content from './components/Content'
 import OpenSource from './features/OpenSource'
@@ -28,10 +28,10 @@ export default function App(): JSX.Element {
       <Container>
         <Me />
         <Content>
-          <Switch>
-            <Route exact path="/opensource" component={OpenSource} />
-            <Route exact path="*" component={OpenSource} />
-          </Switch>
+          <Routes>
+            <Route path="/opensource" element={<OpenSource />} />
+            <Route path="*" element={<OpenSource />} />
+          </Routes>
         </Content>
       </Container>
     </HashRouter>

@@ -5,17 +5,19 @@ export class Optional<T> {
 
   static empty = <T>(): Optional<T> => new Optional<T>()
 
-  static ofNullable = <T>(value?: T): Optional<T> => (value ? Optional.of(value) : Optional.empty<T>())
+  static ofNullable = <T>(value: T): Optional<T> => {
+    return value !== null || typeof value !== undefined ? Optional.of(value) : Optional.empty<T>()
+  }
 
   static of = <T>(value: T): Optional<T> => new Optional(Optional.checkNotNull(value))
 
-  isEmpty = (): boolean => !this.value
+  isEmpty = (): boolean => this.value === null || this.value === undefined
 
   isPresent = (): boolean => this.value !== null && typeof this.value !== 'undefined'
 
   get = (): T => Optional.checkNotNull(this.value!)
 
-  or = (defaultValue: T): T => this.value ?? defaultValue
+  or = (defaultValue: T): T => (this.value ? this.value : defaultValue)
 
   orNothing = (): T | undefined => (this.isPresent() ? this.value : undefined)
 
@@ -37,6 +39,6 @@ export class Optional<T> {
   }
 }
 
-export const empty = <T>(): Optional<T> => Optional.ofNullable()
+export const empty = <T>(): Optional<T> => Optional.empty()
 
 export const fromNullable = <T>(value: T): Optional<T> => new Optional<T>(value)

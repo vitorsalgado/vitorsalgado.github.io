@@ -9,12 +9,14 @@ const shared: JestConfig.InitialOptions = {
   collectCoverage: false,
   restoreMocks: true,
 
-  transform: { '^.+\\.tsx?$': 'ts-jest' },
-  globals: {
-    'ts-jest': {
-      tsconfig: Path.join(process.cwd(), 'tsconfig.test.json')
-    }
-  }
+  transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        tsconfig: Path.join(process.cwd(), 'tsconfig.test.json'),
+      },
+    ],
+  },
 }
 
 const config: JestConfig.InitialOptions = {
@@ -26,27 +28,15 @@ const config: JestConfig.InitialOptions = {
       setupFilesAfterEnv: [Path.resolve('./src/test-setup.config.ts')],
       moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|ico|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|txt|pdf)$': Path.resolve(
-          './test/setup/mocks/files/index.js'
+          './test/setup/mocks/files/index.js',
         ),
         '\\.(css|less|scss)$': Path.resolve('./test/setup/mocks/styles/index.js'),
-        '^@app/(.*)$': '<rootDir>/$1'
+        '^@app/(.*)$': '<rootDir>/$1',
       },
 
-      ...shared
+      ...shared,
     },
-
-    {
-      displayName: 'End-to-End',
-      rootDir: './test',
-      setupFilesAfterEnv: ['expect-puppeteer'],
-      preset: Path.resolve('./test/setup/preset'),
-      moduleNameMapper: {
-        '^@testing/(.*)$': '<rootDir>/$1'
-      },
-
-      ...shared
-    }
-  ]
+  ],
 }
 
 export default config
