@@ -7,8 +7,8 @@ import Projects from '@app/features/OpenSource/projects.data'
 
 export const InitialState: State = {
   opensource: {
-    projects: Projects
-  }
+    projects: Projects,
+  },
 }
 
 const middlewares: Middleware[] = []
@@ -21,7 +21,7 @@ const store = configureStore({
   reducer: rootReducer as any,
   preloadedState: InitialState,
   middleware: [...getDefaultMiddleware(), ...middlewares],
-  devTools: !Config.isProd()
+  devTools: !Config.isProd(),
 })
 
 export function configureAppStore(): EnhancedStore {

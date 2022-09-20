@@ -3,8 +3,8 @@
 const WebPack = require('webpack')
 const DefinePlugin = WebPack.DefinePlugin
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const Config = require('../../configs')
-const resolvePath = require('../../configs/utils').resolvePath
+const Config = require('../../config')
+const resolvePath = require('../../config/utils').resolvePath
 
 const additionalPlugins = []
 
@@ -22,17 +22,17 @@ module.exports = ({ start = [], end = [] }) =>
           transform: function (content, path) {
             return Buffer.from(
               JSON.stringify({
-                ...JSON.parse(content.toString())
-              })
+                ...JSON.parse(content.toString()),
+              }),
             )
-          }
+          },
         },
         {
           force: true,
           from: resolvePath('src/robots.txt'),
-          to: Config.paths.buildDestination
-        }
-      ]
+          to: Config.paths.buildDestination,
+        },
+      ],
     }),
-    ...end
+    ...end,
   ].filter(plugin => plugin)

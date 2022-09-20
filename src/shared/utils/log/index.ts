@@ -9,7 +9,7 @@ const error = (message?: any, ...optionalParams: any[]): void => {
 }
 
 const Logger = {
-  error
+  error,
 }
 
 export default Logger

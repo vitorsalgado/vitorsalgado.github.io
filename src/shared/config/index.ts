@@ -11,7 +11,7 @@ const isLogEnabled = (): boolean => Env.LOG !== 'false'
 const Config = {
   isProd,
   isTest,
-  isLogEnabled
+  isLogEnabled,
 }
 
 export default Config

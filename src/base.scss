@@ -3,16 +3,15 @@
  */
 
 :root {
-  --color-primary: #20133A;
-  --color-highlight: #0360DF;
-  --color-accent: #573EB7;
+  --color-primary: #20133a;
+  --color-highlight: #0360df;
+  --color-accent: #573eb7;
 
   --border: 1px solid #ededf0;
   --border-accent: 1px solid var(--color-accent);
   --border-radius: 5px;
   --box-shadow: 0 0 0 2px #ededf0;
 }
-
 
 /**
   Reset
@@ -25,7 +24,7 @@
 html {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -35,19 +34,24 @@ html {
 html,
 body {
   line-height: 22px;
-  background: #F3F2F2;
+  background: #f3f2f2;
   color: #232323;
   margin: 0;
   height: 100%;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
   padding: 0;
   font-weight: normal;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -58,7 +62,8 @@ a {
   text-decoration: none;
 }
 
-input, button {
+input,
+button {
   outline: none;
   border: 0 none;
 }
@@ -71,12 +76,11 @@ a:hover {
   font-weight: bold;
 }
 
-
 /**
   Default Styles
  */
 
 .icon {
-  font-family: "Material Icons", serif;
+  font-family: 'Material Icons', serif;
   vertical-align: middle;
 }

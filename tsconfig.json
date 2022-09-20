@@ -39,10 +39,8 @@
     ],
     "types": [
       "react",
-      "puppeteer",
-      "jest-environment-puppeteer",
-      "expect-puppeteer",
-      "testing-library__jest-dom"
+      "testing-library__jest-dom",
+      "node"
     ],
 
     "paths": {

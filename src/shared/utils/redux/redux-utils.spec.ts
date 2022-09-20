@@ -5,7 +5,7 @@ describe('Redux Utils', function () {
   const Actions = {
     Test01: 'test-01',
     Test02: 'test-02',
-    Test03: 'test-03'
+    Test03: 'test-03',
   }
 
   const action1 = () => ({ type: Actions.Test01 } as any)
@@ -19,8 +19,8 @@ describe('Redux Utils', function () {
     combineReducers({
       reducer1: onlyWhen(actionIs(Actions.Test01))(reducer1),
       reducer2: onlyWhen(actionIs(Actions.Test02))(reducer2),
-      reducer3: onlyWhen(actionIs(Actions.Test03))(reducer3)
-    })
+      reducer3: onlyWhen(actionIs(Actions.Test03))(reducer3),
+    }),
   )
 
   it('should apply reducer only if provided predicated pass', function () {

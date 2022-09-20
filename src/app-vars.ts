@@ -1,3 +1,3 @@
 export const MediaQueries = {
-  maxWidth: 'max-width: 768px'
+  maxWidth: 'max-width: 768px',
 }

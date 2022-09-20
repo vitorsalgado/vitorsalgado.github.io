@@ -7,7 +7,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const WorkboxPlugin = require('workbox-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 const Base = require('./webpack-base')
-const Config = require('../../configs')
+const Config = require('../../config')
 const Plugins = require('./webpack-plugins')
 
 const HTMLOptions = {
@@ -23,9 +23,9 @@ const HTMLOptions = {
     keepClosingSlash: true,
     minifyJS: true,
     minifyCSS: true,
-    minifyURLs: true
+    minifyURLs: true,
   },
-  templateParameters: () => Config.vars
+  templateParameters: () => Config.vars,
 }
 
 module.exports = Merge(Base, {
@@ -37,7 +37,7 @@ module.exports = Merge(Base, {
     publicPath: Config.publicPath,
     filename: '[name].[chunkhash:8].js',
     chunkFilename: '[name].[chunkhash:8].chunk.js',
-    clean: true
+    clean: true,
   },
 
   optimization: {
@@ -48,9 +48,9 @@ module.exports = Merge(Base, {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all'
-        }
-      }
+          chunks: 'all',
+        },
+      },
     },
     runtimeChunk: 'single',
     nodeEnv: 'production',
@@ -62,16 +62,16 @@ module.exports = Merge(Base, {
           compress: {
             warnings: false,
             comparisons: false,
-            inline: 2
+            inline: 2,
           },
           output: {
             comments: false,
-            ascii_only: true
-          }
+            ascii_only: true,
+          },
         },
-        parallel: true
-      })
-    ]
+        parallel: true,
+      }),
+    ],
   },
 
   plugins: Plugins({
@@ -80,8 +80,8 @@ module.exports = Merge(Base, {
       new WorkboxPlugin.GenerateSW({
         swDest: 'sw.js',
         clientsClaim: true,
-        skipWaiting: true
-      })
-    ]
-  })
+        skipWaiting: true,
+      }),
+    ],
+  }),
 })

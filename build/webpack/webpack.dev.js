@@ -8,7 +8,7 @@ const HotModuleReplacementPlugin = Webpack.HotModuleReplacementPlugin
 const WebpackManifestPlugin = require('webpack-manifest-plugin').WebpackManifestPlugin
 const Merge = require('webpack-merge').merge
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-const Config = require('../../configs')
+const Config = require('../../config')
 const Plugins = require('./webpack-plugins')
 
 const { paths } = Config
@@ -25,11 +25,11 @@ module.exports = Merge(Base, {
     clientLogLevel: 'none',
     host: Config.devServer.host,
     port: Config.devServer.port,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
 
   watchOptions: {
-    ignored: ['.github', '.yarn', 'deployments', 'dist', 'docs', 'test', 'tools', '**/node_modules']
+    ignored: ['.github', '.yarn', 'deployments', 'dist', 'docs', 'test', 'tools', '**/node_modules'],
   },
 
   output: {
@@ -38,7 +38,7 @@ module.exports = Merge(Base, {
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
     publicPath: '/',
-    clean: true
+    clean: true,
   },
 
   plugins: Plugins({
@@ -47,9 +47,9 @@ module.exports = Merge(Base, {
       new HtmlWebPackPlugin({
         inject: true,
         template: paths.indexHTML,
-        templateParameters: () => Config.vars
-      })
+        templateParameters: () => Config.vars,
+      }),
     ],
-    end: [new WebpackManifestPlugin({ fileName: 'asset-manifest.json', publicPath: Config.publicPath })]
-  })
+    end: [new WebpackManifestPlugin({ fileName: 'asset-manifest.json', publicPath: Config.publicPath })],
+  }),
 })

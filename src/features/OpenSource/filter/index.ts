@@ -15,5 +15,5 @@ export const filterAction = (criteria: string): Action<Filter> => ({ type: FILTE
 
 export const filter = (state: OpenSource, action: Action<Filter>): OpenSource => ({
   ...state,
-  projects: Projects.filter(x => x.name.toLowerCase().indexOf(action.payload.criteria.toLowerCase()) > -1)
+  projects: Projects.filter(x => x.name.toLowerCase().indexOf(action.payload.criteria.toLowerCase()) > -1),
 })
