@@ -81,7 +81,7 @@
     "joi": "^17.6.0",
     "lint-staged": "^13.0.3",
     "material-design-icons": "^3.0.1",
-    "node-sass": "^7.0.3",
+    "node-sass": "^9.0.0",
     "postcss-loader": "^7.0.1",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
