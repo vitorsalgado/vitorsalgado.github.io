@@ -1,52 +1,37 @@
 {
-  "compilerOptions": {
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "module": "ESNext",
-    "target": "ES5",
-    "moduleResolution": "node",
-    "jsx": "react",
-
-    "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "sourceMap": true,
-    "declaration": false,
-    "allowJs": true,
-    "checkJs": false,
-    "esModuleInterop": true,
-    "removeComments": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "strict": true,
-    "noFallthroughCasesInSwitch": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
-
-    "outDir": "dist",
-    "baseUrl": ".",
-    "rootDirs": ["src", "test"],
-
-    "typeRoots": [
-      "node_modules/@types",
-      "declarations.d.ts"
-    ],
-    "types": [
-      "react",
-      "testing-library__jest-dom",
-      "node"
-    ],
-
-    "paths": {
-      "@app/*": ["./src/*"],
-      "@testing/*": ["./test/*"]
-    }
-  },
-  "include": ["src/**/*", "declarations.d.ts"]
-}
+    "compilerOptions": {
+      "outDir": "dist",
+      "baseUrl": ".",
+      "module": "esnext",
+      "target": "esnext",
+      "lib": [
+        "Decorators",
+        "esnext.decorators"
+      ],
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "forceConsistentCasingInFileNames": true,
+      "esModuleInterop": true,
+      "importHelpers": false,
+      "resolveJsonModule": true,
+      "sourceMap": true,
+      "declaration": true,
+      "strictBindCallApply": true,
+      "removeComments": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "noImplicitReturns": true,
+      "strict": true,
+      "noFallthroughCasesInSwitch": true,
+      "composite": true,
+      "skipLibCheck": true,
+      "noEmitHelpers": false
+    },
+    "exclude": [
+      "**/node_modules"
+    ]
+  }

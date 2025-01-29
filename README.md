@@ -1,10 +1,17 @@
-# Open Source Profile
+---
+title: "Learn How to Pre-render Pages Using Static Generation with Next.js"
+excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+coverImage: "/assets/blog/hello-world/cover.jpg"
+date: "2020-03-16T05:35:07.322Z"
+author:
+  name: Tim Neutkens
+  picture: "/assets/blog/authors/tim.jpeg"
+ogImage:
+  url: "/assets/blog/hello-world/cover.jpg"
+---
 
-[![ci](https://github.com/vitorsalgado/vitorsalgado.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/vitorsalgado/vitorsalgado.github.io/actions/workflows/ci.yml)
+init desc
 
-My personal profile published on GitHub Pages.  
-Go to: [https://vitorsalgado.github.io/](https://vitorsalgado.github.io/)
+## content
 
-## Overview
-Site made from scratch with **React**, **Redux** and **Styled Components**.  
-It was also a learning project for modern front-end technologies.
+the actual content
